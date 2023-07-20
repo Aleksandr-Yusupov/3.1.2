@@ -38,13 +38,14 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    public void addUser(User newUser){
+    public User addUser(User newUser){
         userRepository.save(newUser);
+        return newUser;
     }
 
     @Override
     @Transactional
-    public void editUser(User user) {
+    public User editUser(User user) {
         User newUser = new User();
         if (user != null) {
             newUser = getUserById(user.getId());
@@ -53,6 +54,7 @@ public class UserServiceImpl implements UserService{
             newUser.setEmail(user.getEmail());
         }
         userRepository.save(newUser);
+        return newUser;
     }
 
     @Override

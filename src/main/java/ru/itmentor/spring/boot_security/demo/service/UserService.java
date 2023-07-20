@@ -8,7 +8,7 @@ public interface UserService {
     List<User> getAllUsers();
     User getUserByLogin(String login);
     User getUserById(long id);
-    void addUser(User newUser);
-    void editUser(User user);
+    User addUser(User newUser);
+    User editUser(User user);
     void deleteUser(User deleteUser);
 }
